@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Classifier</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; text-align: center; }
+        textarea { width: 80%; height: 100px; margin: 20px; }
+        button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        .result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Text Classifier</h1>
+    <form method="POST" action="/predict">
+        <textarea name="text" placeholder="Enter text to classify..." required>{{ text }}</textarea><br>
+        <button type="submit">Classify</button>
+    </form>
+    {% if prediction %}
+        <div class="result">Predicted Category: {{ prediction }}</div>
+    {% endif %}
+</body>
+</html>
